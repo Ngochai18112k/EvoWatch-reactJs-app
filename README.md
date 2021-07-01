@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Install libary necessary
+### `npm i --save axios`
+### `npm i --save  firebase react-firebaseui`
+### `npm i --save react-router react-router-dom`
+### `npm i --save swiper`
