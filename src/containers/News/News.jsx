@@ -33,7 +33,7 @@ function News(props) {
     }
 
     function pageNext() {
-        if (currentPage == Math.ceil(news.length / postPerPage)) {
+        if (currentPage === Math.ceil(news.length / postPerPage)) {
             setActivePage(1);
             setCurrentPage(1);
         }
@@ -56,32 +56,32 @@ function News(props) {
 
     return (
         <div id="content">
-            <div class="banner">
+            <div className="banner">
                 <img src="./images/evo-blog-banner.jpg" alt="" />
-                <div class="container">
-                    <div class="row">
+                <div className="container">
+                    <div className="row">
                         <div className="col-xl-2"></div>
-                        <div class="col-xl-8">
-                            <div class="banner__text" style={{ textAlign: 'center' }}>
-                                <span class="banner__heading">TẤT CẢ TIN TỨC</span>
-                                <span class="banner__desc">Kiến thức về đồng hồ, thông tin khuyến mãi, tin tức & sự kiện, hình ảnh, video clip về đồng hồ đeo tay mới nhất hiện nay, cập nhật liên tục nhanh và đầy đủ...</span>
+                        <div className="col-xl-8">
+                            <div className="banner__text" style={{ textAlign: 'center' }}>
+                                <span className="banner__heading">TẤT CẢ TIN TỨC</span>
+                                <span className="banner__desc">Kiến thức về đồng hồ, thông tin khuyến mãi, tin tức & sự kiện, hình ảnh, video clip về đồng hồ đeo tay mới nhất hiện nay, cập nhật liên tục nhanh và đầy đủ...</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     {
                         news.map((e, i) => {
                             return (
-                                <div class="col-xl-4 news__card">
-                                    <Link class="news__link" title={e.tittle} onClick={() => nextPage(e.idNews)}>
-                                        <div class="news__img">
+                                <div className="col-xl-4 news__card" key={i}>
+                                    <Link to="" className="news__link" title={e.tittle} onClick={() => nextPage(e.idNews)}>
+                                        <div className="news__img">
                                             <img src={`./images/news/${e.image}`} alt="" />
                                         </div>
-                                        <p class="news__tittle">{e.tittle}</p>
-                                        <p class="news__desc hide-on-mobile">{e.description}</p>
+                                        <p className="news__tittle">{e.tittle}</p>
+                                        <p className="news__desc hide-on-mobile">{e.description}</p>
                                     </Link>
                                 </div>
                             );

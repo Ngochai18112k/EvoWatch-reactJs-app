@@ -93,8 +93,8 @@ function Collection(props) {
                                     {
                                         sanPham.map((e, i) => {
                                             return (
-                                                <div className="product__card sale">
-                                                    <Link className="product__link" onClick={() => nextPage(e.id)}></Link>
+                                                <div className="product__card sale" key={i}>
+                                                    <Link to="#" className="product__link" onClick={() => nextPage(e.id)}></Link>
                                                     <span className={`product-sale ${e.sale !== "" ? "sale" : ""}`}>{e.sale}%</span>
                                                     <div className="product__img">
                                                         <div className="product__img-before">
@@ -108,9 +108,9 @@ function Collection(props) {
                                                     <span className="product__name">{e.name}</span>
                                                     <div className="product__price">
                                                         <span className="product__price-new">{e.pricenew}₫</span>
-                                                        <span className="product__price-old">{e.priceold}₫</span>
+                                                        <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                                                     </div>
-                                                    <Link className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</Link>
+                                                    <Link to="" className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</Link>
                                                 </div>
                                             );
                                         })

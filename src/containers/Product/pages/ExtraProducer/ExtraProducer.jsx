@@ -108,9 +108,9 @@ function ExtraProducer(props) {
                                     <span className={`category__plus ${toogle === 2 ? "active" : ""}`} onClick={() => onToogler(2)}></span>
                                     <ul className="category__drop">
                                         {
-                                            nsx.map((e) => {
+                                            nsx.map((e, i) => {
                                                 return (
-                                                    <li className="category__drop-item">
+                                                    <li className="category__drop-item" key={i}>
                                                         <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                     </li>
                                                 );
@@ -123,9 +123,9 @@ function ExtraProducer(props) {
                                     <span className={`category__plus ${toogle === 3 ? "active" : ""}`} onClick={() => onToogler(3)}></span>
                                     <ul className="category__drop">
                                         {
-                                            nsx.map((e) => {
+                                            nsx.map((e, i) => {
                                                 return (
-                                                    <li className="category__drop-item">
+                                                    <li className="category__drop-item" key={i}>
                                                         <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                     </li>
                                                 );
@@ -138,9 +138,9 @@ function ExtraProducer(props) {
                                     <span className={`category__plus ${toogle === 4 ? "active" : ""}`} onClick={() => onToogler(4)}></span>
                                     <ul className="category__drop">
                                         {
-                                            extra.map((e) => {
+                                            extra.map((e, i) => {
                                                 return (
-                                                    <li className="category__drop-item">
+                                                    <li className="category__drop-item" key={i}>
                                                         <Link to={`/extraproducer/${e.nameextra}`} className="category__drop-link">{e.nameextra}</Link>
                                                     </li>
                                                 );
@@ -157,9 +157,9 @@ function ExtraProducer(props) {
                                             <span className={`category__plus ${toogle === 6 ? "active" : ""}`} onClick={() => onToogler(6)}></span>
                                             <ul className="category__drop">
                                                 {
-                                                    nsx.map((e) => {
+                                                    nsx.map((e, i) => {
                                                         return (
-                                                            <li className="category__drop-item">
+                                                            <li className="category__drop-item" key={i}>
                                                                 <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                             </li>
                                                         );
@@ -172,9 +172,9 @@ function ExtraProducer(props) {
                                             <span className={`category__plus ${toogle === 7 ? "active" : ""}`} onClick={() => onToogler(7)}></span>
                                             <ul className="category__drop">
                                                 {
-                                                    nsx.map((e) => {
+                                                    nsx.map((e, i) => {
                                                         return (
-                                                            <li className="category__drop-item">
+                                                            <li className="category__drop-item" key={i}>
                                                                 <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                             </li>
                                                         );
@@ -187,9 +187,9 @@ function ExtraProducer(props) {
                                             <span className={`category__plus ${toogle === 8 ? "active" : ""}`} onClick={() => onToogler(8)}></span>
                                             <ul className="category__drop">
                                                 {
-                                                    extra.map((e) => {
+                                                    extra.map((e, i) => {
                                                         return (
-                                                            <li className="category__drop-item">
+                                                            <li className="category__drop-item" key={i}>
                                                                 <Link to={`/extraproducer/${e.nameextra}`} className="category__drop-link">{e.nameextra}</Link>
                                                             </li>
                                                         );
@@ -227,9 +227,9 @@ function ExtraProducer(props) {
                             <p className="filter__tittle">Thương hiệu</p>
                             <ul className="filter__list">
                                 {
-                                    nsx.map((e) => {
+                                    nsx.map((e, i) => {
                                         return (
-                                            <li className="filter__item">
+                                            <li className="filter__item" key={i}>
                                                 <input type="checkbox" className="filter__item-in" id={e.nameNsx} name={e.idNsx} />
                                                 <div className="filter__item-text">
                                                     <span className={e.tt === true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>

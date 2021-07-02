@@ -17,7 +17,7 @@ function Pagination({ countPage, paginate, activePage, currentPage, pageNext, pa
                 {
                     pageNumber.map((value, i) => {
                         return (
-                            <li className={`pagination__item ${activePage === value ? "active" : ""}`} onClick={() => paginate(value)}>
+                            <li className={`pagination__item ${activePage === value ? "active" : ""}`} onClick={() => paginate(value)} key={i}>
                                 <div className="pagination__link">{value}</div>
                             </li>
                         );

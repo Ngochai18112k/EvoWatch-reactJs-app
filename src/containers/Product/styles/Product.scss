@@ -706,6 +706,9 @@
         &-old {
             color: #bbb;
             text-decoration: line-through;
+            &.disable {
+                display: none;
+            }
         }
     }
     &__card.sale &-sale {

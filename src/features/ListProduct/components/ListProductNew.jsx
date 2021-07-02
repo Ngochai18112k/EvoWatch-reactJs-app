@@ -60,9 +60,9 @@ function ListProductNew(props) {
                 {
                     props.sanPham.map((e, i) => {
                         return (
-                            <div className="swiper-slide">
+                            <div className="swiper-slide" key={i}>
                                 <div className="product__card">
-                                    <Link className="product__link" onClick={() => nextPage(e.id)}></Link>
+                                    <Link to="#" className="product__link" onClick={() => nextPage(e.id)}></Link>
                                     <span className={`product-sale ${e.sale !== "" ? "sale" : ""}`}>{e.sale}%</span>
                                     <div className="product__img">
                                         <div className="product__img-before">
@@ -76,7 +76,7 @@ function ListProductNew(props) {
                                     <span className="product__name">{e.name}</span>
                                     <div className="product__price">
                                         <span className="product__price-new">{e.pricenew}₫</span>
-                                        <span className="product__price-old">{e.priceold}₫</span>
+                                        <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                                     </div>
                                     <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
                                 </div>

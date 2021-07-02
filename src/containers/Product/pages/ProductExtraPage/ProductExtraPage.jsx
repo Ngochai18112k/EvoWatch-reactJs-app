@@ -140,14 +140,14 @@ function ProductExtraPage(props) {
 
     return (
         <div id="content">
-            <div class="banner">
+            <div className="banner">
                 <img src="./images/evo-col-banner.jpg" alt="" />
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="banner__text">
-                                <span class="banner__heading">PHỤ KIỆN</span>
-                                <span class="banner__desc">Kiến thức về đồng hồ, thông tin khuyến mãi, tin tức & sự kiện, hình ảnh, video clip về đồng hồ đeo tay mới nhất hiện nay, cập nhật liên tục nhanh và đầy đủ...</span>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-8">
+                            <div className="banner__text">
+                                <span className="banner__heading">PHỤ KIỆN</span>
+                                <span className="banner__desc">Kiến thức về đồng hồ, thông tin khuyến mãi, tin tức & sự kiện, hình ảnh, video clip về đồng hồ đeo tay mới nhất hiện nay, cập nhật liên tục nhanh và đầy đủ...</span>
                             </div>
                         </div>
                     </div>
@@ -188,9 +188,9 @@ function ProductExtraPage(props) {
                                     <span className={`category__plus ${toogle === 2 ? "active" : ""}`} onClick={() => onToogler(2)}></span>
                                     <ul className="category__drop">
                                         {
-                                            nsx.map((e) => {
+                                            nsx.map((e, i) => {
                                                 return (
-                                                    <li className="category__drop-item">
+                                                    <li className="category__drop-item" key={i}>
                                                         <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                     </li>
                                                 );
@@ -203,9 +203,9 @@ function ProductExtraPage(props) {
                                     <span className={`category__plus ${toogle === 3 ? "active" : ""}`} onClick={() => onToogler(3)}></span>
                                     <ul className="category__drop">
                                         {
-                                            nsx.map((e) => {
+                                            nsx.map((e, i) => {
                                                 return (
-                                                    <li className="category__drop-item">
+                                                    <li className="category__drop-item" key={i}>
                                                         <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                     </li>
                                                 );
@@ -218,9 +218,9 @@ function ProductExtraPage(props) {
                                     <span className={`category__plus ${toogle === 4 ? "active" : ""}`} onClick={() => onToogler(4)}></span>
                                     <ul className="category__drop">
                                         {
-                                            extra.map((e) => {
+                                            extra.map((e, i) => {
                                                 return (
-                                                    <li className="category__drop-item">
+                                                    <li className="category__drop-item" key={i}>
                                                         <Link to={`/extraproducer/${e.nameextra}`} className="category__drop-link">{e.nameextra}</Link>
                                                     </li>
                                                 );
@@ -237,9 +237,9 @@ function ProductExtraPage(props) {
                                             <span className={`category__plus ${toogle === 6 ? "active" : ""}`} onClick={() => onToogler(6)}></span>
                                             <ul className="category__drop">
                                                 {
-                                                    nsx.map((e) => {
+                                                    nsx.map((e, i) => {
                                                         return (
-                                                            <li className="category__drop-item">
+                                                            <li className="category__drop-item" key={i}>
                                                                 <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                             </li>
                                                         );
@@ -252,9 +252,9 @@ function ProductExtraPage(props) {
                                             <span className={`category__plus ${toogle === 7 ? "active" : ""}`} onClick={() => onToogler(7)}></span>
                                             <ul className="category__drop">
                                                 {
-                                                    nsx.map((e) => {
+                                                    nsx.map((e, i) => {
                                                         return (
-                                                            <li className="category__drop-item">
+                                                            <li className="category__drop-item" key={i}>
                                                                 <Link to={`/productproducer/${e.nameNsx}`} className="category__drop-link">{`Đồng hồ ${e.nameNsx}`}</Link>
                                                             </li>
                                                         );
@@ -267,9 +267,9 @@ function ProductExtraPage(props) {
                                             <span className={`category__plus ${toogle === 8 ? "active" : ""}`} onClick={() => onToogler(8)}></span>
                                             <ul className="category__drop">
                                                 {
-                                                    extra.map((e) => {
+                                                    extra.map((e, i) => {
                                                         return (
-                                                            <li className="category__drop-item">
+                                                            <li className="category__drop-item" key={i}>
                                                                 <Link to={`/extraproducer/${e.nameextra}`} className="category__drop-link">{e.nameextra}</Link>
                                                             </li>
                                                         );
@@ -307,9 +307,9 @@ function ProductExtraPage(props) {
                             <p className="filter__tittle">Thương hiệu</p>
                             <ul className="filter__list">
                                 {
-                                    nsx.map((e) => {
+                                    nsx.map((e, i) => {
                                         return (
-                                            <li className="filter__item">
+                                            <li className="filter__item" key={i}>
                                                 <input type="checkbox" className="filter__item-in" id={e.nameNsx} name={e.idNsx} />
                                                 <div className="filter__item-text">
                                                     <span className={e.tt === true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>

@@ -81,9 +81,9 @@ function Navbar(props) {
                         </div>
                         <ul className="dropdown">
                             {
-                                nsx.map((e) => {
+                                nsx.map((e, i) => {
                                     return (
-                                        <li className="dropdown-item">
+                                        <li className="dropdown-item" key={i}>
                                             <div className="dropdown__link">
                                                 <Link className="link" to={`/productproducer/${e.nameNsx}`}>{`Đồng hồ ${e.nameNsx}`}</Link>
                                             </div>
@@ -100,9 +100,9 @@ function Navbar(props) {
                         </div>
                         <ul className="dropdown">
                             {
-                                nsx.map((e) => {
+                                nsx.map((e, i) => {
                                     return (
-                                        <li className="dropdown-item">
+                                        <li className="dropdown-item" key={i}>
                                             <div className="dropdown__link">
                                                 <Link className="link" to={`/productproducer/${e.nameNsx}`}>{`Đồng hồ ${e.nameNsx}`}</Link>
                                             </div>
@@ -119,9 +119,9 @@ function Navbar(props) {
                         </div>
                         <ul className="dropdown">
                             {
-                                extra.map((e) => {
+                                extra.map((e, i) => {
                                     return (
-                                        <li className="dropdown-item">
+                                        <li className="dropdown-item" key={i}>
                                             <div className="dropdown__link">
                                                 <Link className="link" to={`/extraproducer/${e.nameextra}`}>{e.nameextra}</Link>
                                             </div>
@@ -141,9 +141,9 @@ function Navbar(props) {
                                 <Link to="/productmen" className="drop__tittle">NAM</Link>
                                 <ul className="drop__list">
                                     {
-                                        nsx.map((e) => {
+                                        nsx.map((e, i) => {
                                             return (
-                                                <li className="drop__item">
+                                                <li className="drop__item" key={i}>
                                                     <div className="drop__link">
                                                         <Link className="link" to={`/productproducer/${e.nameNsx}`}>{`Đồng hồ ${e.nameNsx}`}</Link>
                                                     </div>
@@ -157,9 +157,9 @@ function Navbar(props) {
                                 <Link to="/productwomen" className="drop__tittle">NỮ</Link>
                                 <ul className="drop__list">
                                     {
-                                        nsx.map((e) => {
+                                        nsx.map((e, i) => {
                                             return (
-                                                <li className="drop__item">
+                                                <li className="drop__item" key={i}>
                                                     <div className="drop__link">
                                                         <Link className="link" to={`/productproducer/${e.nameNsx}`}>{`Đồng hồ ${e.nameNsx}`}</Link>
                                                     </div>
@@ -173,9 +173,9 @@ function Navbar(props) {
                                 <span className="drop__tittle">PHỤ KIỆN</span>
                                 <ul className="drop__list">
                                     {
-                                        extra.map((e) => {
+                                        extra.map((e, i) => {
                                             return (
-                                                <li className="drop__item">
+                                                <li className="drop__item" key={i}>
                                                     <div className="drop__link">
                                                         <Link className="link" to={`/extraproducer/${e.nameextra}`}>{e.nameextra}</Link>
                                                     </div>

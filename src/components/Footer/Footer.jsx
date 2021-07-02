@@ -62,7 +62,7 @@ function Footer(props) {
                     <div className="col-xl-3 col-lg-3 col-md-3 col-12 col-sm-3">
                         <span className="footer__tittle">ĐĂNG KÝ NHẮN TIN</span>
                         <p className="footer__text">Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
-                        <input type="email" className="footer__input" value="" placeholder="Email của bạn" />
+                        <input type="email" className="footer__input" defaultValue="form" placeholder="Email của bạn" />
                         {/* Btn */}
                         <div className="button">
                             <Link to="/signup" className="btn btn__darkwhite" style={{ width: '100%' }}>ĐĂNG KÝ</Link>
