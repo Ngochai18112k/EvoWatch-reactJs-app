@@ -76,7 +76,7 @@ function News(props) {
                         news.map((e, i) => {
                             return (
                                 <div className="col-xl-4 news__card" key={i}>
-                                    <Link to="" className="news__link" title={e.tittle} onClick={() => nextPage(e.idNews)}>
+                                    <Link to="#" className="news__link" title={e.tittle} onClick={() => nextPage(e.idNews)}>
                                         <div className="news__img">
                                             <img src={`./images/news/${e.image}`} alt="" />
                                         </div>

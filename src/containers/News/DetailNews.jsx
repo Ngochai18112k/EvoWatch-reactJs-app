@@ -24,7 +24,7 @@ function DetailNews(props) {
                             <i className="fas fa-angle-right"></i>
                         </li>
                         <li className="direct__item">
-                            <Link to="/product" className="direct__link">Tin tức</Link>
+                            <Link to="/news" className="direct__link">Tin tức</Link>
                             <i className="fas fa-angle-right"></i>
                         </li>
                         <li className="direct__item">

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Modal.scss';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../features/Contexts/CartProvider';
+import { ModalContext } from '../../features/Contexts/ModalProvider';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -11,14 +12,19 @@ Modal.propTypes = {};
 function Modal(props) {
     const [toogle, setToogle] = useState(false);
     const context = useContext(CartContext);
+    const { closeModal } = useContext(ModalContext);
     let history = useHistory();
 
     var indexProduct = context.cart.reduce(function (accumulator, currentValue) {
         return accumulator + currentValue.quality;
     }, 0);
 
-    function onToogle() {
-        toogle ? setToogle(false) : setToogle(true);
+    const onToogle = () => {
+        setToogle(true);
+        const closeTimeout = setTimeout(() => {
+            closeModal();
+            clearTimeout(closeTimeout);
+        }, 300)
     }
 
     function nextPage(p) {
@@ -44,7 +50,7 @@ function Modal(props) {
     }
 
     return (
-        <div id="modal" className={`${indexProduct > 0 ? "active" : ""} ${toogle ? "disable" : ""}`}>
+        <div id="modal" className={`${toogle ? "" : "active"}`}>
             <div className="modal__overlay" onClick={onToogle}></div>
             <div className="modal__body">
                 <div className="modal__body-tittle">
@@ -64,9 +70,9 @@ function Modal(props) {
                         <div className="body__product-text15">Thành tiền</div>
                     </div>
                     {
-                        context.cart.map((e) => {
+                        context.cart.map((e, i) => {
                             return (
-                                <div className="body__product-price">
+                                <div className="body__product-price" key={i}>
                                     <div className="body__product-55">
                                         <div className="body__product-img" onClick={() => nextPage(e.id)}>
                                             <img src={`./images/product/${e.imageafter}`} alt="" />
@@ -87,7 +93,7 @@ function Modal(props) {
                                     <div className="body__product-15">
                                         <div className="body__quality">
                                             <button className="body__product-quality math" onClick={() => minusQualities(e)}>-</button>
-                                            <input type="text" className="body__product-quality num" value={e.quality} />
+                                            <input type="text" className="body__product-quality num" value={e.quality} name="quality" />
                                             <button className="body__product-quality math" onClick={() => addQualities(e)}>+</button>
                                         </div>
                                     </div>
@@ -98,7 +104,7 @@ function Modal(props) {
                     }
                 </div>
                 <div className="modal__body-foot">
-                    <Link to="/">
+                    <Link to="#" onClick={onToogle}>
                         <i className="fas fa-caret-left"></i>
                         Tiếp tục mua hàng
                     </Link>

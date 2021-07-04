@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { CartContext } from '../../../../features/Contexts/CartProvider';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../../../features/Contexts/CartProvider';
 import '../../styles/Product.scss';
 import ListProductProducer from './ListProductProducer';
 

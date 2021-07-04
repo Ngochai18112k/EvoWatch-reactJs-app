@@ -1,12 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import '../../styles/Product.scss';
-import { useState, useEffect } from 'react';
-import ListProductMenPage from './ListProductMenPage';
-import Pagination from '../Pagination';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../../../features/Contexts/CartProvider';
-import { useContext } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import '../../styles/Product.scss';
+import Pagination from '../Pagination';
+import ListProductMenPage from './ListProductMenPage';
 
 ProductMenPage.propTypes = {};
 

@@ -74,7 +74,7 @@ function Cart(props) {
                                 {
                                     context.cart.map((e, i) => {
                                         return (
-                                            <div className="row cart__product">
+                                            <div className="row cart__product" key={i}>
                                                 <div className="col-xl-offset-3">
                                                     <Link to={`/product/${e.id}`} title={e.name}>
                                                         <img src={`./images/product/${e.imageafter}`} alt="" className="cart__item-img" />

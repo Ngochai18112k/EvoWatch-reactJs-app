@@ -1,18 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Swiper } from 'swiper/core';
 import 'swiper/swiper-bundle.css';
-import '../styles/Collection.scss';
-import { Link } from 'react-router-dom';
-import { useEffect, useState, useContext } from 'react';
-import { useHistory } from 'react-router';
 import { CartContext } from '../../Contexts/CartProvider';
+import { ModalContext } from '../../Contexts/ModalProvider';
+import '../styles/Collection.scss';
 
 Collection.propTypes = {};
 
 function Collection(props) {
     const [sanPham, setSanPham] = useState([]);
     const context = useContext(CartContext);
+    const { openModal } = useContext(ModalContext);
+
+    const handleOpenModal = () => {
+        openModal();
+    }
+
     function addCart(el) {
         context.addCart(el);
     }
@@ -110,7 +115,9 @@ function Collection(props) {
                                                         <span className="product__price-new">{e.pricenew}₫</span>
                                                         <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                                                     </div>
-                                                    <Link to="" className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</Link>
+                                                    <div onClick={handleOpenModal}>
+                                                        <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
+                                                    </div>
                                                 </div>
                                             );
                                         })

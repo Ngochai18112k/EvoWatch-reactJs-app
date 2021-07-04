@@ -1,14 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import '../../styles/Product.scss';
-import { useState, useEffect } from 'react';
-import ListProductExtraPage from './ListProductExtraPage';
-import Pagination from '../Pagination';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/Product.scss';
+import Pagination from '../Pagination';
+import ListProductExtraPage from './ListProductExtraPage';
 
 ProductExtraPage.propTypes = {};
 
-function ProductExtraPage(props) {
+function ProductExtraPage() {
     const [sanPham, setSanPham] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage, setPostPerPage] = useState(12);

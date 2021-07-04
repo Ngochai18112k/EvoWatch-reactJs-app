@@ -1,16 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import '../../containers/Product/styles/Product.scss';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
-import { CartContext } from '../Contexts/CartProvider';
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import '../../containers/Product/styles/Product.scss';
+import { CartContext } from '../Contexts/CartProvider';
+import { ModalContext } from '../Contexts/ModalProvider';
 
 SearchPage.propTypes = {};
 
 function SearchPage(props) {
     const context = useContext(CartContext);
     var sp = context.search;
+
+    const { openModal } = useContext(ModalContext);
+    const handleOpenModal = () => {
+        openModal();
+    }
 
     let history = useHistory();
     function nextPage(p) {
@@ -59,7 +63,9 @@ function SearchPage(props) {
                             <span className="product__price-new">{sp.pricenew}₫</span>
                             <span className="product__price-old">{sp.priceold}₫</span>
                         </div>
-                        <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(sp)}>Thêm vào giỏ hàng</div>
+                        <div onClick={handleOpenModal}>
+                            <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(sp)}>Thêm vào giỏ hàng</div>
+                        </div>
                     </div>
                 </div>
             </div>

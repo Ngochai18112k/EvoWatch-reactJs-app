@@ -4,8 +4,13 @@
     margin: 20px 0;
     width: 100%;
     &-img {
+        display: none;
         margin: 10px 0;
         width: 100%;
+        &.active {
+            display: block;
+            animation: fadeIn linear 0.3s;
+        }
     }
     .product__list {
         display: flex;
@@ -74,18 +79,27 @@
         &-text {
             font-size: 1.6rem;
             color: var(--text-color);
+            &.disable {
+                display: none;
+            }
         }
         &-old {
             font-size: 2rem;
             color: var(--text-color);
             letter-spacing: 0.1rem;
             text-decoration: line-through;
+            &.disable {
+                display: none;
+            }
         }
         &-desc {
             font-size: 1.4rem;
             font-weight: 500;
             color: var(--text-color);
             letter-spacing: 0.1rem;
+            .detail__price-save.disable {
+                display: none;
+            }
             p {
                 margin-bottom: 5px;
             }

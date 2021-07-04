@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ListProductNew from './ListProductNew';
 
 ProductNew.propTypes = {};

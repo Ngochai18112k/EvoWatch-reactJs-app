@@ -1,14 +1,24 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { CartContext } from '../../../../features/Contexts/CartProvider';
+import { ModalContext } from '../../../../features/Contexts/ModalProvider';
 import { useHistory } from 'react-router';
 
-ListProductProducer.propTypes = {};
+ListProductProducer.propTypes = {
+    sanPham: PropTypes.object,
+};
 
 function ListProductProducer(props) {
+    const { sanPham } = props;
+
     const context = useContext(CartContext);
+    const { openModal } = useContext(ModalContext);
     function addCart(el) {
         context.addCart(el);
+    }
+
+    const handleOpenModal = () => {
+        openModal();
     }
 
     let history = useHistory();
@@ -19,7 +29,7 @@ function ListProductProducer(props) {
     return (
         <div className="row product">
             {
-                props.sanPham.map((e, i) => {
+                sanPham.map((e, i) => {
                     return (
                         <div className="col-xl-4 product__card" key={i}>
                             <a className="product__link" onClick={() => nextPage(e.id)}></a>
@@ -38,7 +48,9 @@ function ListProductProducer(props) {
                                 <span className="product__price-new">{e.pricenew}₫</span>
                                 <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                             </div>
-                            <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
+                            <div onClick={handleOpenModal}>
+                                <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
+                            </div>
                         </div>
                     );
                 })

@@ -112,16 +112,16 @@ function Header(props) {
                                 <div className={`header__cart-box ${indexProduct !== 0 ? "active" : ""}`}>
                                     <div className="header__cart-box-list">
                                         {
-                                            context.cart.map((e) => {
+                                            context.cart.map((e, i) => {
                                                 return (
-                                                    <div className="header__cart-box-item">
+                                                    <div className="header__cart-box-item" key={i}>
                                                         <img src={`./images/product/${e.imageafter}`} alt="" onClick={() => nextPage(e.id)} />
                                                         <div className="header__cart-box-info">
                                                             <p className="header__cart-box-name">{e.name}</p>
                                                             <p className="header__cart-box-price">{e.pricenew}₫</p>
                                                             <div className="header__cart-box-quality">
                                                                 <button onClick={() => addQualities(e)}>+</button>
-                                                                <input type="text" value={e.quality} id="quantity1" />
+                                                                <input type="text" value={e.quality} id="quantity1" name="quantity1" />
                                                                 <button onClick={() => minusQualities(e)}>-</button>
                                                             </div>
                                                         </div>

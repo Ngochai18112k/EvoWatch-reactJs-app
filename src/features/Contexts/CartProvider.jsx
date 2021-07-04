@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import useLocalStorage from '../../useLocalStorage';
+import Modal from '../../components/Modal/Modal';
 
 export const CartContext = React.createContext();
 
-export const CartProvider = (props) => {
+export const CartProvider = ({ children }) => {
     const [user, setUser] = useLocalStorage("acc", { Email: '', Password: '', FirstName: '', UserName: '', Phone: '' });
     const [listProduct, setListProduct] = useState([]);
     const [productProducer, setProductProducer] = useState([]);
@@ -153,9 +154,20 @@ export const CartProvider = (props) => {
         setCart(result);
     }
 
+    const valueCartProvider = {
+        listProduct, setListProduct,
+        productProducer, setProductProducer,
+        extraProducer, setExtraProducer,
+        user, userFunction, setUser, resetUser,
+        search, setSearch, apiSearch,
+        sortGiaTangTK, sortGiaGiamTK, sortGiaTang, sortGiaGiam,
+        cart, addCart, deleteCart, resetCart, addQuality, minusQuality, totalPrice,
+        news, setNews
+    }
+
     return (
-        <CartContext.Provider value={{ listProduct, setListProduct, productProducer, setProductProducer, extraProducer, setExtraProducer, user, userFunction, setUser, resetUser, search, setSearch, apiSearch, sortGiaTangTK, sortGiaGiamTK, sortGiaTang, sortGiaGiam, cart, addCart, deleteCart, resetCart, addQuality, minusQuality, totalPrice, news, setNews }}>
-            {props.children}
+        <CartContext.Provider value={valueCartProvider}>
+            {children}
         </CartContext.Provider>
     );
 }
