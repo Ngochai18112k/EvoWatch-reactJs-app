@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import './Navbar.scss';
 import MenuLink from '../MenuLink/MenuLink';
+import './Navbar.scss';
 
 Navbar.propTypes = {};
 

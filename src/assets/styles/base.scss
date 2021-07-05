@@ -45,12 +45,13 @@ html {
 .button {
     display: flex;
 }
-.btn {
+.btns {
     position: relative;
     display: inline-block;
     padding: 14px 28px;
     line-height: normal;
     text-transform: uppercase;
+    text-align: center;
     font-size: 1.1rem;
     letter-spacing: 1.5px;
     font-weight: 400;
@@ -59,7 +60,7 @@ html {
     transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     z-index: 1;
 }
-.btn::before {
+.btns::before {
     position: absolute;
     content: "";
     display: block;
@@ -75,7 +76,7 @@ html {
     transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
         -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-.btn:hover::before {
+.btns:hover::before {
     transform: scaleX(0);
 }
 .btn__darkwhite {
@@ -87,6 +88,7 @@ html {
 .btn__darkwhite:hover {
     color: var(--black-color);
     border-color: var(--black-color);
+    text-decoration: none;
 }
 .btn__darkwhite::before {
     background-color: var(--black-color);
@@ -99,6 +101,7 @@ html {
 .btn__white:hover {
     color: var(--white);
     border-color: var(--white);
+    text-decoration: none;
 }
 .btn__white::before {
     background-color: var(--white);
@@ -112,6 +115,7 @@ html {
 .btn__dark:hover {
     color: var(--white);
     background-color: var(--hover-text);
+    text-decoration: none;
 }
 .btn__whitedark {
     border: 1px solid var(--black-color);
@@ -121,6 +125,7 @@ html {
 .btn__whitedark:hover {
     color: var(--white);
     background-color: var(--black-color);
+    text-decoration: none;
 }
 
 /* Tittle */

@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './News.scss';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../features/Contexts/CartProvider';
+import './News.scss';
 
 DetailNews.propTypes = {
 

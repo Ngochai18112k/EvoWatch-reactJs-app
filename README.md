@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Install libary necessary
 ### `npm i --save axios`
-### `npm i --save  firebase react-firebaseui`
+### `npm i --save  firebase rxfire rxjs`
 ### `npm i --save react-router react-router-dom`
 ### `npm i --save swiper`
 ### `npm i --save node-sass`

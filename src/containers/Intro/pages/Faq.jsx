@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import '../styles/Intro.scss';
-import MenuLink from '../../../components/MenuLink/MenuLink';
 import { Link } from 'react-router-dom';
+import MenuLink from '../../../components/MenuLink/MenuLink';
+import '../styles/Intro.scss';
 
 Faq.propTypes = {
 
@@ -50,31 +49,31 @@ function Faq(props) {
             </div>
 
             {/* Intro */}
-            <div class="container">
-                <p class="intro__tittle">THANH TOÁN VÀ VẬN CHUYỂN</p>
-                <div class="intro__panel">
-                    <div class="intro__panel-dark">
+            <div className="container">
+                <p className="intro__tittle">THANH TOÁN VÀ VẬN CHUYỂN</p>
+                <div className="intro__panel">
+                    <div className="intro__panel-dark">
                         <Link to="#">Khi nào thì đơn hàng của tôi được chuyển đi?</Link>
                     </div>
-                    <p class="intro__text">Với đơn hàng của Quý khách, sau 24h kể từ khi đặt hàng (không tính ngày thứ 7, chủ nhật và các ngày lễ), Evo Watch sẽ liên hệ để xác nhận và gửi sản phẩm đến Quý khách</p>
+                    <p className="intro__text">Với đơn hàng của Quý khách, sau 24h kể từ khi đặt hàng (không tính ngày thứ 7, chủ nhật và các ngày lễ), Evo Watch sẽ liên hệ để xác nhận và gửi sản phẩm đến Quý khách</p>
                 </div>
-                <div class="intro__panel-white">
+                <div className="intro__panel-white">
                     <Link to="#">Tôi có phải thanh toán thêm thuế hay phí gì không?</Link>
                 </div>
-                <div class="intro__panel-white">
+                <div className="intro__panel-white">
                     <Link to="#">Tôi muốn lấy hóa đơn VAT thì phải làm thế nào?</Link>
                 </div>
-                <p class="intro__tittle">ĐƠN HÀNG VÀ NHỮNG THÔNG TIN LIÊN QUAN</p>
-                <div class="intro__panel">
-                    <div class="intro__panel-dark">
+                <p className="intro__tittle">ĐƠN HÀNG VÀ NHỮNG THÔNG TIN LIÊN QUAN</p>
+                <div className="intro__panel">
+                    <div className="intro__panel-dark">
                         <Link to="#">Tôi cần phải thay đổi một vài thứ liên quan đến đơn hàng, tôi phải làm thế nào?</Link>
                     </div>
-                    <p class="intro__text">Quý khách vui lòng liên hệ Hotline <Link to="tel:0123456789">0123 456 789</Link> hoặc inbox fanpage Evo Watch để được hỗ trợ nhanh nhất các thông tin về đơn hàng</p>
+                    <p className="intro__text">Quý khách vui lòng liên hệ Hotline <Link to="tel:0123456789">0123 456 789</Link> hoặc inbox fanpage Evo Watch để được hỗ trợ nhanh nhất các thông tin về đơn hàng</p>
                 </div>
-                <div class="intro__panel-white">
+                <div className="intro__panel-white">
                     <Link to="#">Tôi có thể sử dụng nhiều ưu đãi cho một đơn hàng được không?</Link>
                 </div>
-                <div class="intro__panel-white">
+                <div className="intro__panel-white">
                     <Link to="#">Evo Watch có thể khắc bất kỳ thứ gì tôi muốn lên sản phẩm được không?</Link>
                 </div>
             </div>

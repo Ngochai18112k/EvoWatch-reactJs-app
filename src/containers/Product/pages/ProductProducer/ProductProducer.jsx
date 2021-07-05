@@ -232,7 +232,7 @@ function ProductProducer(props) {
                                             <li className="filter__item" key={i}>
                                                 <input type="checkbox" className="filter__item-in" id={e.nameNsx} name={e.idNsx} />
                                                 <div className="filter__item-text">
-                                                    <span className={e.tt == true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>
+                                                    <span className={e.tt === true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>
                                                         <i className="fa"></i>
                                                         {e.nameNsx}
                                                     </span>

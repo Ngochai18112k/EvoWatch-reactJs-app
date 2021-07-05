@@ -6,7 +6,7 @@ import { CartContext } from '../../../../features/Contexts/CartProvider';
 import { ModalContext } from '../../../../features/Contexts/ModalProvider';
 
 ListExtraProducer.propTypes = {
-    sanPham: PropTypes.object,
+    sanPham: PropTypes.array,
 };
 
 function ListExtraProducer(props) {

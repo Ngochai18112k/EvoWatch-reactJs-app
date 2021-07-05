@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './Home.scss';
 import { Link } from 'react-router-dom';
-import ProductNew from '../../features/ListProduct/components/ProductNew';
-import ProducMen from '../../features/ListProduct/components/ProductMen';
-import ExtraNew from '../../features/ListProduct/components/ExtraNew';
 import Banners from '../../features/Banners/Banners';
-import NewsHome from '../News/NewsHome';
 import Collection from '../../features/ListProduct/components/Collection';
+import ExtraNew from '../../features/ListProduct/components/ExtraNew';
+import ProducMen from '../../features/ListProduct/components/ProductMen';
+import ProductNew from '../../features/ListProduct/components/ProductNew';
+import NewsHome from '../News/NewsHome';
+import './Home.scss';
 
 Home.propTypes = {};
 
@@ -38,7 +37,7 @@ function Home(props) {
 
                 {/* Btn */}
                 <div className="button">
-                    <Link to="/product" className="btn btn__darkwhite" title="Xem tất cả Sản phẩm mới">XEM TẤT CẢ. SẢN PHẨM MỚI</Link>
+                    <Link to="/product" className="btns btn__darkwhite" title="Xem tất cả Sản phẩm mới">XEM TẤT CẢ. SẢN PHẨM MỚI</Link>
                 </div>
 
                 {/* Banner */}
@@ -64,7 +63,7 @@ function Home(props) {
 
                 {/* Btn */}
                 <div className="button">
-                    <Link to="/productmen" className="btn btn__darkwhite" title="Xem tất cả Dành cho nam">XEM TẤT CẢ. DÀNH CHO NAM</Link>
+                    <Link to="/productmen" className="btns btn__darkwhite" title="Xem tất cả Dành cho nam">XEM TẤT CẢ. DÀNH CHO NAM</Link>
                 </div>
 
                 {/* Range */}
@@ -90,7 +89,7 @@ function Home(props) {
 
                 {/* Btn */}
                 <div className="button">
-                    <Link to="/productextra" className="btn btn__darkwhite" title="Xem tất cả Phụ kiện mới">XEM TẤT CẢ. PHỤ KIỆN MỚI</Link>
+                    <Link to="/productextra" className="btns btn__darkwhite" title="Xem tất cả Phụ kiện mới">XEM TẤT CẢ. PHỤ KIỆN MỚI</Link>
                 </div>
             </div>
 
@@ -102,7 +101,7 @@ function Home(props) {
 
             {/* Btn */}
             <div className="button">
-                <Link to="/product" className="btn btn__darkwhite" title="Xem tất cả">XEM TẤT CẢ</Link>
+                <Link to="/product" className="btns btn__darkwhite" title="Xem tất cả">XEM TẤT CẢ</Link>
             </div>
         </div >
     );

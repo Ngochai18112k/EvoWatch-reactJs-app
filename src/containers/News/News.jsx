@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import './News.scss';
-import Pagination from '../Product/pages/Pagination';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
-import { CartContext } from '../../features/Contexts/CartProvider';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../features/Contexts/CartProvider';
+import Pagination from '../Product/pages/Pagination';
+import './News.scss';
 
 News.propTypes = {
 

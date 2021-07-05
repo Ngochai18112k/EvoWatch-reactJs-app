@@ -65,7 +65,7 @@ function Footer(props) {
                         <input type="email" className="footer__input" defaultValue="" placeholder="Email của bạn" />
                         {/* Btn */}
                         <div className="button">
-                            <Link to="/signup" className="btn btn__darkwhite" style={{ width: '100%' }}>ĐĂNG KÝ</Link>
+                            <Link to="/signup" className="btns btn__darkwhite" style={{ width: '100%' }}>ĐĂNG KÝ</Link>
                         </div>
                         <ul className="footer__pay-list">
                             <li className="footer__pay-item">

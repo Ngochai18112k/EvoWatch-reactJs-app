@@ -1,23 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Navbar from '../Navbar/Navbar';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
-import { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../features/Contexts/CartProvider';
+import Navbar from '../Navbar/Navbar';
+import useUser from '../../features/Auth/firebase/useUser';
+import { auth } from '../../features/Auth/firebase/firebase';
 import './Header.scss';
 
 Header.propTypes = {};
 
 function Header(props) {
     let history = useHistory();
+    const { isLoggedIn, userState, loaded } = useUser();
     const [toogle, setToogle] = useState(false);
     const [search, setSearch] = useState("");
     const context = useContext(CartContext);
     var indexProduct = context.cart.reduce(function (accumulator, currentValue) {
         return accumulator + currentValue.quality;
     }, 0);
+
+    const onLogout = () => {
+        auth.signOut();
+    }
 
     function onToogleSearch() {
         toogle ? setToogle(false) : setToogle(true);
@@ -54,11 +58,6 @@ function Header(props) {
         setSearch(e.target.value);
     }
 
-    function Logout() {
-        context.resetUser();
-        history.push('/');
-    }
-
     return (
         <div id="header">
             <div className="container">
@@ -83,7 +82,15 @@ function Header(props) {
                             <div className="account hide-on-mobile">
                                 <Link to="/login">TÀI KHOẢN</Link>
                                 {
-                                    context.user.length <= 0 ?
+                                    !loaded ? null : isLoggedIn() ? (
+                                        <ul className="account__list">
+                                            <li className="account__item">
+                                                <Link to="/account">{`XIN CHÀO, ${userState.displayName}`}</Link>
+                                            </li>
+                                            <li className="account__item">
+                                                <Link to="/" onClick={onLogout}>ĐĂNG XUẤT</Link>
+                                            </li>
+                                        </ul>) : (
                                         <ul className="account__list">
                                             <li className="account__item">
                                                 <Link to="/login">ĐĂNG NHẬP</Link>
@@ -91,15 +98,8 @@ function Header(props) {
                                             <li className="account__item">
                                                 <Link to="/signup">ĐĂNG KÍ</Link>
                                             </li>
-                                        </ul> :
-                                        <ul className="account__list">
-                                            <li className="account__item">
-                                                <Link to="/account">{`XIN CHÀO, ${context.user.Email}`}</Link>
-                                            </li>
-                                            <li className="account__item">
-                                                <Link to="/" onClick={Logout}>ĐĂNG XUẤT</Link>
-                                            </li>
                                         </ul>
+                                    )
                                 }
                             </div>
                             <div className="header__cart">
@@ -121,7 +121,7 @@ function Header(props) {
                                                             <p className="header__cart-box-price">{e.pricenew}₫</p>
                                                             <div className="header__cart-box-quality">
                                                                 <button onClick={() => addQualities(e)}>+</button>
-                                                                <input type="text" value={e.quality} id="quantity1" name="quantity1" />
+                                                                <input type="text" value={e.quality} defaultValue id="quantity1" name="quantity1" />
                                                                 <button onClick={() => minusQualities(e)}>-</button>
                                                             </div>
                                                         </div>

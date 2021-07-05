@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './Banners.scss';
 import { Link } from 'react-router-dom';
+import './Banners.scss';
 
 Banners.propTypes = {};
 
@@ -16,7 +15,7 @@ function Banners(props) {
                     <div className="banners__content">
                         <span className="banners__text">Đồng hồ</span>
                         <div className="banners__btn">
-                            <Link to="/product" className="btn btn__white" title="Xem thêm">Xem thêm</Link>
+                            <Link to="/product" className="btns btn__white" title="Xem thêm">Xem thêm</Link>
                         </div>
                     </div>
                 </div>
@@ -27,7 +26,7 @@ function Banners(props) {
                     <div className="banners__content">
                         <span className="banners__text">Đồng hồ</span>
                         <div className="banners__btn">
-                            <Link to="/product" className="btn btn__white" title="Xem thêm">Xem thêm</Link>
+                            <Link to="/product" className="btns btn__white" title="Xem thêm">Xem thêm</Link>
                         </div>
                     </div>
                 </div>
@@ -38,7 +37,7 @@ function Banners(props) {
                     <div className="banners__content">
                         <span className="banners__text">Đồng hồ</span>
                         <div className="banners__btn">
-                            <Link to="/product" className="btn btn__white" title="Xem thêm">Xem thêm</Link>
+                            <Link to="/product" className="btns btn__white" title="Xem thêm">Xem thêm</Link>
                         </div>
                     </div>
                 </div>

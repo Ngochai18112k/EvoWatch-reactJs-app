@@ -1,34 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import './assets/styles/bootstrap.min.css';
 import './assets/styles/base.scss';
-import { useEffect } from 'react';
+import './assets/styles/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './containers/Home/Home';
-import routes from './routers/routers';
 import { CartProvider } from './features/Contexts/CartProvider';
 import ModalProvider from './features/Contexts/ModalProvider';
-import firebase from 'firebase';
-
-const config = {
-  apiKey: 'AIzaSyADxG0KsfObDcl3Fzhqc_-RmH3uEKGWGaY',
-  authDomain: 'evo-watch-auth.firebaseapp.com',
-};
-firebase.initializeApp(config);
+import routes from './routers/routers';
 
 function App() {
-  useEffect(() => {
-    const unregisterAuthObserver = firebase.auth().onAuthStateChanged(async (user) => {
-      if (!user) {
-        return;
-      }
-      //const token = await user.getIdToken();
-    });
-
-    return () => unregisterAuthObserver();
-  }, []);
-
   return (
     <CartProvider>
       <div className="App">

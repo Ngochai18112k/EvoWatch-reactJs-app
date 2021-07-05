@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './Auth.scss';
 import { Link } from 'react-router-dom';
+import '../styles/Auth.scss';
 
 Forget.propTypes = {
 
@@ -36,7 +35,7 @@ function Forget(props) {
                                 <input type="email" class="login__form-in" placeholder="Nhập Địa chỉ Email" required />
                             </div>
                             <div class="button">
-                                <Link to="/product" class="btn btn__darkwhite login__btn" title="Xem tất cả Sản phẩm mới">LẤY LẠI MẬT KHẨU</Link>
+                                <Link to="/product" class="btns btn__darkwhite login__btn" title="Xem tất cả Sản phẩm mới">LẤY LẠI MẬT KHẨU</Link>
                             </div>
                             <p class="login__form-end">
                                 QUAY LẠI

@@ -70,7 +70,7 @@ function ProductPage(props) {
     }
 
     function pageNext() {
-        if (currentPage == Math.ceil(sanPham.length / postPerPage)) {
+        if (currentPage === Math.ceil(sanPham.length / postPerPage)) {
             setActivePage(1);
             setCurrentPage(1);
         }
@@ -312,7 +312,7 @@ function ProductPage(props) {
                                             <li className="filter__item" key={i}>
                                                 <input type="checkbox" className="filter__item-in" id={e.nameNsx} name={e.idNsx} />
                                                 <div className="filter__item-text">
-                                                    <span className={e.tt == true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>
+                                                    <span className={e.tt === true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>
                                                         <i className="fa"></i>
                                                         {e.nameNsx}
                                                     </span>
@@ -476,11 +476,11 @@ function ProductPage(props) {
                         </div>
                         <Pagination countPage={countPage} paginate={paginate} activePage={activePage} currentPage={currentPage} pageNext={pageNext} pagePrev={pagePrev}></Pagination>
                         <div className="row">
-                            <div className={`alert ${currentPage == 0 ? "active" : ""}`}>
+                            <div className={`alert ${currentPage === 0 ? "active" : ""}`}>
                                 <span className="alert__text">Không có sản phẩm nào trong danh mục này.</span>
-                                <a href="" className="alert__close">
+                                <Link to="#" className="alert__close">
                                     <i className="fas fa-times"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -70,7 +70,7 @@ function ProductMenPage(props) {
     }
 
     function pageNext() {
-        if (currentPage == Math.ceil(sanPham.length / postPerPage)) {
+        if (currentPage === Math.ceil(sanPham.length / postPerPage)) {
             setActivePage(1);
             setCurrentPage(1);
         }
@@ -312,7 +312,7 @@ function ProductMenPage(props) {
                                             <li className="filter__item" key={i}>
                                                 <input type="checkbox" className="filter__item-in" id={e.nameNsx} name={e.idNsx} />
                                                 <div className="filter__item-text">
-                                                    <span className={e.tt == true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>
+                                                    <span className={e.tt === true ? "active" : ""} onClick={() => changeNsx(e.idNsx)}>
                                                         <i className="fa"></i>
                                                         {e.nameNsx}
                                                     </span>

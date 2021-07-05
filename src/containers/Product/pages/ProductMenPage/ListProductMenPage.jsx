@@ -5,7 +5,7 @@ import { ModalContext } from '../../../../features/Contexts/ModalProvider';
 import { useHistory } from 'react-router';
 
 ListProductMenPage.propTypes = {
-    sanPham: PropTypes.object,
+    sanPham: PropTypes.array,
 };
 
 function ListProductMenPage(props) {

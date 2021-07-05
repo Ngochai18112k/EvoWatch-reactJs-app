@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../../../features/Contexts/CartProvider';
 import { ModalContext } from '../../../../features/Contexts/ModalProvider';
 import { useHistory } from 'react-router';
 
 ListProductPage.propTypes = {
-    sanPham: PropTypes.object,
+    sanPham: PropTypes.array,
 };
 
 function ListProductPage(props) {
@@ -32,7 +33,7 @@ function ListProductPage(props) {
                 sanPham.map((e, i) => {
                     return (
                         <div className="col-xl-4 product__card" key={i}>
-                            <a className="product__link" onClick={() => nextPage(e.id)}></a>
+                            <Link to="#" className="product__link" onClick={() => nextPage(e.id)}></Link>
                             <span className={`product-sale ${e.sale !== "" ? "sale" : ""}`}>{e.sale}%</span>
                             <div className="product__img">
                                 <div className="product__img-before">

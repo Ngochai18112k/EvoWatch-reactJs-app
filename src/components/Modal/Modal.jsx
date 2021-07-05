@@ -1,11 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Modal.scss';
-import { useContext, useState } from 'react';
-import { CartContext } from '../../features/Contexts/CartProvider';
-import { ModalContext } from '../../features/Contexts/ModalProvider';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../features/Contexts/CartProvider';
+import { ModalContext } from '../../features/Contexts/ModalProvider';
+import './Modal.scss';
 
 Modal.propTypes = {};
 
@@ -93,7 +91,7 @@ function Modal(props) {
                                     <div className="body__product-15">
                                         <div className="body__quality">
                                             <button className="body__product-quality math" onClick={() => minusQualities(e)}>-</button>
-                                            <input type="text" className="body__product-quality num" value={e.quality} name="quality" />
+                                            <input type="text" className="body__product-quality num" value={e.quality} defaultValue name="quality" />
                                             <button className="body__product-quality math" onClick={() => addQualities(e)}>+</button>
                                         </div>
                                     </div>

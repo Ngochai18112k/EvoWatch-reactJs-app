@@ -1,8 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useLocalStorage from '../../useLocalStorage';
-import Modal from '../../components/Modal/Modal';
 
 export const CartContext = React.createContext();
 

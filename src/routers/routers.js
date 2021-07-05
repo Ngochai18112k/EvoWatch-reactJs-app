@@ -12,10 +12,10 @@ import ProductWomen from '../containers/Product/pages/ProductWomenPage/ProductWo
 import ProductExtra from '../containers/Product/pages/ProductExtraPage/ProductExtraPage';
 import Cart from '../features/Cart/Cart';
 import DetailProduct from '../containers/Product/pages/DetailProduct/DetailProduct';
-import Login from '../features/Auth/Login';
-import Signup from '../features/Auth/Signup';
-import Forget from '../features/Auth/Forget';
-import Account from '../features/Auth/Account';
+import Login from '../features/Auth/components/Login';
+import Signup from '../features/Auth/components/Signup';
+import Forget from '../features/Auth/components/Forget';
+import Account from '../features/Auth/components/Account';
 import Search from '../features/Search/SearchPage';
 import ProductProducer from '../containers/Product/pages/ProductProducer/ProductProducer';
 import ExtraProducer from '../containers/Product/pages/ExtraProducer/ExtraProducer';

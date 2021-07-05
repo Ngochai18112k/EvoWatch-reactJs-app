@@ -27,8 +27,8 @@ function DetailProduct(props) {
         history.push(`/detailproduct/${p}`);
     }
 
-    function addCart(e) {
-        context.addCart(sp);
+    function addCart(el) {
+        context.addCart(el);
     }
 
     function addQualities(params) {
