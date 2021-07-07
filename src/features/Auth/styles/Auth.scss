@@ -38,6 +38,27 @@
         &-input {
             padding-bottom: 30px;
         }
+        &-input.error {
+            .message-error {
+                margin-bottom: 0;
+                display: block;
+            }
+            .login__form-in {
+                border-color: #e74c3c;
+            }
+        }
+        &-input.success {
+            .login__form-in {
+                border-color: #2ecc71;
+            }
+        }
+        .message-error {
+            display: none;
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+            color: #e74c3c;
+            padding: 5px 0;
+        }
         &-text {
             font-size: 1.3rem;
             font-weight: 500;

@@ -4,7 +4,6 @@ import useLocalStorage from '../../useLocalStorage';
 export const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
-    const [user, setUser] = useLocalStorage("acc", { Email: '', Password: '', FirstName: '', UserName: '', Phone: '' });
     const [listProduct, setListProduct] = useState([]);
     const [productProducer, setProductProducer] = useState([]);
     const [extraProducer, setExtraProducer] = useState([]);
@@ -66,10 +65,6 @@ export const CartProvider = ({ children }) => {
             )
     }, []);
 
-    function userFunction(data) {
-        setUser(data);
-    }
-
     function apiSearch(e) {
         fetch(`https://60cc065271b73400171f6e19.mockapi.io/products/${e}`)
             .then(res => res.json())
@@ -112,10 +107,6 @@ export const CartProvider = ({ children }) => {
         setCart([]);
     }
 
-    function resetUser() {
-        setUser([]);
-    }
-
     function addCart(el) {
         var exist = cart.find((x) => x.id === el.id);
         if (exist) {
@@ -155,7 +146,6 @@ export const CartProvider = ({ children }) => {
         listProduct, setListProduct,
         productProducer, setProductProducer,
         extraProducer, setExtraProducer,
-        user, userFunction, setUser, resetUser,
         search, setSearch, apiSearch,
         sortGiaTangTK, sortGiaGiamTK, sortGiaTang, sortGiaGiam,
         cart, addCart, deleteCart, resetCart, addQuality, minusQuality, totalPrice,
