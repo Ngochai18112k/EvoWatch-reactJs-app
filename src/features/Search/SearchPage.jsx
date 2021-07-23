@@ -46,7 +46,7 @@ function SearchPage(props) {
                     </div>
                 </div>
                 <div className="row product">
-                    <div className="col-xl-3 product__card">
+                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 product__card">
                         <Link className="product__link" onClick={() => nextPage(sp.id)}></Link>
                         <span className="product-sale">{sp.sale}%</span>
                         <div className="product__img">
@@ -63,7 +63,7 @@ function SearchPage(props) {
                             <span className="product__price-new">{sp.pricenew}₫</span>
                             <span className="product__price-old">{sp.priceold}₫</span>
                         </div>
-                        <div onClick={handleOpenModal}>
+                        <div onClick={handleOpenModal} className="hide-on-mobile-tablet">
                             <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(sp)}>Thêm vào giỏ hàng</div>
                         </div>
                     </div>

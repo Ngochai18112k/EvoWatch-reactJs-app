@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/Product.scss';
+import CategoryMobile from '../CategoryMobile';
 import Pagination from '../Pagination';
 import ListProductExtraPage from './ListProductExtraPage';
 
@@ -15,6 +16,7 @@ function ProductExtraPage() {
     const [extra, setExtra] = useState([]);
     const [toogle, setToogle] = useState(0);
     const [toogleSort, setToogleSort] = useState(0);
+    const [toogleCate, setToogleCate] = useState(false);
     const [sanPhamNsx, setSanPhamNsx] = useState([]);
 
     var sanPhamDisplay = sanPhamNsx.length <= 0 ? sanPham : sanPhamNsx;
@@ -65,6 +67,10 @@ function ProductExtraPage() {
 
     const onToogleSort = (index) => {
         setToogleSort(index);
+    }
+
+    function onToogleCate() {
+        toogleCate ? setToogleCate(false) : setToogleCate(true);
     }
 
     function pageNext() {
@@ -151,9 +157,13 @@ function ProductExtraPage() {
                     </div>
                 </div>
             </div>
+            <div className="category-mobile show-on-mobile-tablet">
+                <i className={`fa fa-filter open ${toogleCate ? "disable" : ""}`} onClick={onToogleCate}></i>
+                <CategoryMobile toogle={toogle} onToogler={onToogler} nsx={nsx} extra={extra} changeNsx={changeNsx} toogleCate={toogleCate} onToogleCate={onToogleCate}></CategoryMobile>
+            </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-xl-3">
+                    <div className="col-xl-3 col-lg-3 hide-on-mobile-tablet">
                         <div className="category">
                             <p className="category__heading">DANH MỤC</p>
                             <ul className="category__list">
@@ -433,8 +443,8 @@ function ProductExtraPage() {
                         </div>
                     </div>
                     {/* Product Content */}
-                    <div className="col-xl-9">
-                        <div className="sort">
+                    <div className="col-xl-9 col-lg-9">
+                        <div className="sort hide-on-mobile">
                             <span className="sort__tittle">Xếp theo:</span>
                             <ul className="sort__list">
                                 <li className={`sort__item ${toogleSort === 1 ? "active" : ""}`} onClick={sortAZ}>

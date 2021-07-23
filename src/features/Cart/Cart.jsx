@@ -67,17 +67,17 @@ function Cart(props) {
                     </div>
                     <div className={`cart__item ${indexProduct !== 0 ? "active" : ""}`}>
                         <div className="row">
-                            <div className="col-xl-9">
+                            <div className="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12">
                                 {
                                     context.cart.map((e, i) => {
                                         return (
                                             <div className="row cart__product" key={i}>
-                                                <div className="col-xl-offset-3">
+                                                <div className="col-xl-offset-3 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-offset-3">
                                                     <Link to={`/product/${e.id}`} title={e.name}>
                                                         <img src={`./images/product/${e.imageafter}`} alt="" className="cart__item-img" />
                                                     </Link>
                                                 </div>
-                                                <div className="col-xl-offset-9 card__box">
+                                                <div className="col-xl-offset-9 col-lg-offset-9 col-md-offset-9 col-sm-offset-9 col-offset-9 card__box">
                                                     <div className="cart__info">
                                                         <p className="cart__info-name">
                                                             <Link to={`/product/${e.id}`}>{e.name}</Link>

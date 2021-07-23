@@ -28,28 +28,18 @@ function ListProductMen(props) {
     SwiperCore.use([Navigation, Pagination]);
     useEffect(() => {
         const swiper = new Swiper('.product', {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            slidesPerGroup: 20,
+            slidesPerView: 2,
+            spaceBetween: 0,
             breakpoints: {
-                450: {
+                575: {
                     slidesPerView: 2,
-                    spaceBetween: 10,
+                    spaceBetween: 0,
                 },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
+                992: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
                 },
                 1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 0,
-                },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 0,
-                },
-
-                1365: {
                     slidesPerView: 4,
                     spaceBetween: 0,
                 }
@@ -60,7 +50,7 @@ function ListProductMen(props) {
     });
 
     return (
-        <div className="swiper-container product">
+        <div className="swiper-container product hide-on-tablet">
             <div className="swiper-wrapper">
                 {
                     props.sanPham.map((e, i) => {
@@ -83,7 +73,7 @@ function ListProductMen(props) {
                                         <span className="product__price-new">{e.pricenew}₫</span>
                                         <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                                     </div>
-                                    <div onClick={handleOpenModal}>
+                                    <div onClick={handleOpenModal} className="hide-on-mobile-tablet">
                                         <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
                                     </div>
                                 </div>

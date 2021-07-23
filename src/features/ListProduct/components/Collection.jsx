@@ -41,32 +41,9 @@ function Collection(props) {
 
     useEffect(() => {
         const swiper = new Swiper('.collection__slide', {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            slidesPerView: 2,
+            spaceBetween: 0,
             slidesPerGroup: 20,
-            breakpoints: {
-                450: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                },
-                1200: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                },
-
-                1365: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                }
-            },
             loop: true,
             loopFillGroupWithBlank: false,
         })
@@ -115,7 +92,7 @@ function Collection(props) {
                                                         <span className="product__price-new">{e.pricenew}₫</span>
                                                         <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                                                     </div>
-                                                    <div onClick={handleOpenModal}>
+                                                    <div onClick={handleOpenModal} className="hide-on-mobile-tablet">
                                                         <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
                                                     </div>
                                                 </div>

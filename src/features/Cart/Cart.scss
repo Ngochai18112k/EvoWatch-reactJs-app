@@ -34,7 +34,7 @@
     .cart__product {
         padding: 20px 0;
     }
-    .cart__item-img {
+    &-img {
         max-height: 180px;
         width: auto;
     }
@@ -139,5 +139,31 @@
         font-weight: 700;
         color: var(--hover-text);
         letter-spacing: 0.1rem;
+    }
+}
+
+//responsive
+/* Mobile & Tablet */
+@media (max-width: 992px) {
+}
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 992px) {
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .cart__item {
+        &-img {
+            max-height: 90px;
+            width: auto;
+        }
+        .cart__info {
+            width: 50px;
+            margin: 0;
+        }
+        .cart__price {
+            width: 60px;
+        }
     }
 }

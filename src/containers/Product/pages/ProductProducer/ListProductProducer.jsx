@@ -31,7 +31,7 @@ function ListProductProducer(props) {
             {
                 sanPham.map((e, i) => {
                     return (
-                        <div className="col-xl-4 product__card" key={i}>
+                        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 product__card" key={i}>
                             <a className="product__link" onClick={() => nextPage(e.id)}></a>
                             <span className={`product-sale ${e.sale !== "" ? "sale" : ""}`}>{e.sale}%</span>
                             <div className="product__img">
@@ -48,7 +48,7 @@ function ListProductProducer(props) {
                                 <span className="product__price-new">{e.pricenew}₫</span>
                                 <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                             </div>
-                            <div onClick={handleOpenModal}>
+                            <div onClick={handleOpenModal} className="hide-on-mobile-tablet">
                                 <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
                             </div>
                         </div>

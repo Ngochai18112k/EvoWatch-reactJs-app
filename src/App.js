@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import './assets/styles/base.scss';
 import './assets/styles/bootstrap.min.css';
+import './assets/styles/responsive.scss';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './containers/Home/Home';

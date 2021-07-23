@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../../../features/Contexts/CartProvider';
 import '../../styles/Product.scss';
+import CategoryMobile from '../CategoryMobile';
 import ListExtraProducer from './ListExtraProducer';
 
 ExtraProducer.propTypes = {};
@@ -13,6 +14,7 @@ function ExtraProducer(props) {
     const [extra, setExtra] = useState([]);
     const [toogle, setToogle] = useState(0);
     const [toogleSort, setToogleSort] = useState(0);
+    const [toogleCate, setToogleCate] = useState(false);
 
     useEffect(() => {
         fetch("https://60d56ce2943aa60017768911.mockapi.io/producers")
@@ -43,6 +45,10 @@ function ExtraProducer(props) {
         setToogleSort(index);
     }
 
+    function onToogleCate() {
+        toogleCate ? setToogleCate(false) : setToogleCate(true);
+    }
+
     function changeNsx(e) {
         setNsx(nsx.map(
             u => u.idNsx === e ? { ...u, tt: true } : { ...u, tt: false }
@@ -64,7 +70,7 @@ function ExtraProducer(props) {
                 <img src="../images/evo-col-banner.jpg" alt="" />
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-8">
+                        <div className="col">
                             <div className="banner__text">
                                 <span className="banner__heading">TẤT CẢ SẢN PHẨM</span>
                                 <span className="banner__desc">Kiến thức về đồng hồ, thông tin khuyến mãi, tin tức & sự kiện, hình ảnh, video clip về đồng hồ đeo tay mới nhất hiện nay, cập nhật liên tục nhanh và đầy đủ...</span>
@@ -73,9 +79,13 @@ function ExtraProducer(props) {
                     </div>
                 </div>
             </div>
+            <div className="category-mobile show-on-mobile-tablet">
+                <i className={`fa fa-filter open ${toogleCate ? "disable" : ""}`} onClick={onToogleCate}></i>
+                <CategoryMobile toogle={toogle} onToogler={onToogler} nsx={nsx} extra={extra} changeNsx={changeNsx} toogleCate={toogleCate} onToogleCate={onToogleCate}></CategoryMobile>
+            </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-xl-3">
+                    <div className="col-xl-3 col-lg-3 hide-on-mobile-tablet">
                         <div className="category">
                             <p className="category__heading">DANH MỤC</p>
                             <ul className="category__list">
@@ -355,8 +365,8 @@ function ExtraProducer(props) {
                         </div>
                     </div>
                     {/* Product Content */}
-                    <div className="col-xl-9">
-                        <div className="sort">
+                    <div className="col-xl-9 col-lg-9">
+                        <div className="sort hide-on-mobile">
                             <span className="sort__tittle">Xếp theo:</span>
                             <ul className="sort__list">
                                 <li className={`sort__item ${toogleSort === 1 ? "active" : ""}`}>

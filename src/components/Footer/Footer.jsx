@@ -11,7 +11,7 @@ function Footer(props) {
         <div id="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-xl-3 col-lg-3 col-md-3 col-12 col-sm-3">
+                    <div className="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
                         <Link to="/">
                             <img src="./images/logo.png" alt="" className="footer__logo" />
                         </Link>
@@ -31,7 +31,7 @@ function Footer(props) {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-3 col-12 col-sm-3">
+                    <div className="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
                         <span className="footer__tittle">MUA HÀNG</span>
                         <ul className="footer__list">
                             <li className="footer__item">
@@ -45,7 +45,7 @@ function Footer(props) {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-3 col-12 col-sm-3">
+                    <div className="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
                         <span className="footer__tittle">DỊCH VỤ KHÁCH HÀNG</span>
                         <ul className="footer__list">
                             <li className="footer__item">
@@ -59,7 +59,7 @@ function Footer(props) {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-3 col-12 col-sm-3">
+                    <div className="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
                         <span className="footer__tittle">ĐĂNG KÝ NHẮN TIN</span>
                         <p className="footer__text">Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
                         <input type="email" className="footer__input" defaultValue="" placeholder="Email của bạn" />

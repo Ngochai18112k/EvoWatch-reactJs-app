@@ -223,3 +223,35 @@
     margin: 20px 0;
     height: 503px;
 }
+
+//responsive
+/* Mobile & Tablet */
+@media (max-width: 992px) {
+    .navblog__list {
+        overflow-x: scroll;
+        .navblog__item {
+            .navblog__link {
+                width: 140px;
+            }
+        }
+    }
+    .banner {
+        position: relative;
+        img {
+            min-height: 160px;
+        }
+        p {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 992px) {
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+}

@@ -31,7 +31,7 @@ function Navbar(props) {
     }, []);
 
     return (
-        <div className="row hide-on-mobile">
+        <div className="row hide-on-mobile-tablet">
             <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <ul className="nav">
                     <li className="nav__item">

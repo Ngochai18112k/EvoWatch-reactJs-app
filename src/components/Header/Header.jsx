@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar';
 import useUser from '../../features/Auth/firebase/useUser';
 import { auth } from '../../features/Auth/firebase/firebase';
 import './Header.scss';
+import NavbarMobile from '../NavbarMobile/NavbarMobile';
 
 Header.propTypes = {};
 
@@ -13,6 +14,7 @@ function Header(props) {
     let history = useHistory();
     const { isLoggedIn, userState, loaded } = useUser();
     const [toogle, setToogle] = useState(false);
+    const [toogleNav, setToogleNav] = useState(false);
     const [search, setSearch] = useState("");
     const context = useContext(CartContext);
     var indexProduct = context.cart.reduce(function (accumulator, currentValue) {
@@ -25,6 +27,10 @@ function Header(props) {
 
     function onToogleSearch() {
         toogle ? setToogle(false) : setToogle(true);
+    }
+
+    function handleToogleNav() {
+        toogleNav ? setToogleNav(false) : setToogleNav(true);
     }
 
     function nextPage(p) {
@@ -63,13 +69,13 @@ function Header(props) {
             <div className="container">
                 {/* Header__top */}
                 <div className="row header__top">
-                    <div className="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-4 header__home hide-on-mobile">
+                    <div className="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-4 header__home hide-on-mobile-tablet">
                         <span>HOTLINE ĐẶT HÀNG:</span>
                         <Link to="tel:0123456789">0123 456 789</Link>
                     </div>
-                    <div className="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-4 header__menu show-on-mobile">
-                        <Link to="/" className="header__menu-link">
-                            <i className="far fa-bars header__menu-icon"></i>
+                    <div className="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-4 header__menu show-on-mobile-tablet">
+                        <Link to="#" className="header__menu-link">
+                            <i className="far fa-bars header__menu-icon" onClick={handleToogleNav}></i>
                         </Link>
                     </div>
                     <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-4 header__logo">
@@ -79,7 +85,7 @@ function Header(props) {
                     </div>
                     <div className="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-4">
                         <div className="header__acc">
-                            <div className="account hide-on-mobile">
+                            <div className="account hide-on-mobile-tablet">
                                 <Link to="/login">TÀI KHOẢN</Link>
                                 {
                                     !loaded ? null : isLoggedIn() ? (
@@ -104,12 +110,12 @@ function Header(props) {
                             </div>
                             <div className="header__cart">
                                 <Link to="/cart">
-                                    <span className="hide-on-mobile">GIỎ HÀNG</span>
+                                    <span className="hide-on-mobile-tablet">GIỎ HÀNG</span>
                                     <i className="fas fa-cart-arrow-down header__cart-icon">
                                         <span>{indexProduct}</span>
                                     </i>
                                 </Link>
-                                <div className={`header__cart-box ${indexProduct !== 0 ? "active" : ""}`}>
+                                <div className={`header__cart-box hide-on-mobile-tablet ${indexProduct !== 0 ? "active" : ""}`}>
                                     <div className="header__cart-box-list">
                                         {
                                             context.cart.map((e, i) => {
@@ -142,7 +148,7 @@ function Header(props) {
                                         <Link className="link" to="/cart">GIỎ HÀNG</Link>
                                     </div>
                                 </div>
-                                <div className={`header__cart-box-no ${indexProduct === 0 ? "active" : ""}`}>
+                                <div className={`header__cart-box-no hide-on-mobile-tablet ${indexProduct === 0 ? "active" : ""}`}>
                                     <p>Không có sản phẩm trong giỏ hàng.</p>
                                 </div>
                             </div>
@@ -157,6 +163,8 @@ function Header(props) {
                 {/* Navbar */}
                 <Navbar></Navbar>
             </div>
+            {/* Navbar-mobile */}
+            <NavbarMobile toogleNav={toogleNav} handleToogleNav={handleToogleNav}></NavbarMobile>
             {/* Search-box */}
             <div id="search" className={`${toogle ? "active" : ""}`}>
                 <div className="search__overlay" onClick={onToogleSearch}></div>

@@ -30,9 +30,9 @@ function NewsHome(props) {
                     {
                         news.map((e, i) => {
                             return (
-                                <div className={`col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 news__card ${e.idNews > 4 ? "disable" : ""}`} key={i}>
-                                    <Link to="#" className="news__link" title={e.tittle}>
-                                        <div className="news__img">
+                                <div className={`col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 news__card ${e.idNews > 4 ? "disable" : ""}`} key={i}>
+                                    <Link to="#" className="news__link-home" title={e.tittle}>
+                                        <div className="news__img-home">
                                             <img src={`./images/news/${e.image}`} alt="" />
                                         </div>
                                         <p className="news__tittle">{e.tittle}</p>

@@ -49,28 +49,18 @@ function DetailProduct(props) {
 
     useEffect(() => {
         const swiper = new Swiper('.product', {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            slidesPerGroup: 20,
+            slidesPerView: 2,
+            spaceBetween: 0,
             breakpoints: {
-                450: {
+                575: {
                     slidesPerView: 2,
-                    spaceBetween: 10,
+                    spaceBetween: 0,
                 },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
+                992: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
                 },
                 1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 0,
-                },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 0,
-                },
-
-                1365: {
                     slidesPerView: 4,
                     spaceBetween: 0,
                 }
@@ -102,7 +92,7 @@ function DetailProduct(props) {
 
                 {/* Detail */}
                 <div className="row product__detail">
-                    <div className="col-xl-6">
+                    <div className="col-xl-6 col-lg-6 col-md-6">
                         <div className="row">
                             <div className="col-xl-12">
                                 <img src={`../images/product/${sp.imageafter}`} alt="" className={`product__detail-img ${toogle === 1 ? "active" : ""}`} />
@@ -128,7 +118,7 @@ function DetailProduct(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-xl-6">
+                    <div className="col-xl-6 col-lg-6 col-md-6">
                         <div className="product__detail-tittle">
                             <p className="detail__tittle-name">{sp.name}</p>
                             <p className="detail__tittle-sku">
@@ -343,7 +333,7 @@ function DetailProduct(props) {
                                                 <span className="product__price-new">{e.pricenew}₫</span>
                                                 <span className={`product__price-old ${e.priceold === "" ? "disable" : ""}`}>{e.priceold}₫</span>
                                             </div>
-                                            <div className="product__add" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
+                                            <div className="product__add hide-on-mobile-tablet" title="Thêm vào giỏ hàng" onClick={() => addCart(e)}>Thêm vào giỏ hàng</div>
                                         </div>
                                     </div>
                                 );

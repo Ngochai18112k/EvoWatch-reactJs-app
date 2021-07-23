@@ -17,7 +17,7 @@ function Contact(props) {
             <div className="container">
                 <div className="row">
                     <div className="col-xl-2"></div>
-                    <div className="col-xl-8">
+                    <div className="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div className="login__tittle">GỬI THÔNG TIN</div>
                         <p className="login__tittle-text">Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được.</p>
                         <div className="login__form">
