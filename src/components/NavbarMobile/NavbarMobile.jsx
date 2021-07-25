@@ -39,7 +39,7 @@ function NavbarMobile({ toogleNav, handleToogleNav }) {
                 <ul className="navmobile__list">
                     <li className="navmobile__item">
                         <div className="navmobile__link" onClick={handleToogleNav}>
-                            <MenuLink to="/" activeOnlyWhenExact={true} label="Trang Chủ" />
+                            <MenuLink to="/" activeOnlyWhenExact={true} label="Trang Chủ" onClick={handleToogleNav} />
                         </div>
                     </li>
                     <li className="navmobile__item">

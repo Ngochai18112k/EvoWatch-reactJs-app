@@ -50,7 +50,7 @@ function Modal(props) {
     return (
         <div id="modal" className={`${toogle ? "" : "active"}`}>
             <div className="modal__overlay" onClick={onToogle}></div>
-            <div className="modal__body">
+            <div className="modal__body hide-on-mobile-tablet">
                 <div className="modal__body-tittle">
                     <p>BẠN ĐÃ THÊM
                         <Link to="/">CRUX</Link>
@@ -117,6 +117,37 @@ function Modal(props) {
                 </div>
                 <div className={`modal__close`} onClick={onToogle}>
                     <i className="fa fa-times"></i>
+                </div>
+            </div>
+            <div className="modal__body-mobile show-on-mobile-tablet">
+                <div className="modal__title-mobile">
+                    <div className="icon">
+                        <i className="fa fa-check"></i>
+                    </div>
+                    <span>Thêm vào giỏ hàng thành công</span>
+                    <i className="fa fa-times close" onClick={onToogle}></i>
+                </div>
+                {
+                    context.cart.map((e, i) => {
+                        return (
+                            <div className="modal__product-mobile" key={i}>
+                                <img src={`../images/product/${e.imageafter}`} alt="" />
+                                <div className="info">
+                                    <div className="name">{e.name}</div>
+                                    <div className="price">{e.pricenew}₫</div>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+                <div className="modal__footer-mobile">
+                    <div className="button">
+                        <Link to="/" className="btns btn__darkwhite" style={{ width: "100%" }} title="Thanh toán ngay">THANH TOÁN NGAY</Link>
+                    </div>
+                    <br />
+                    <div className="button">
+                        <Link to="/" className="btns btn__whitedark" style={{ width: "100%" }} title="Tiếp tục mua hàng">TIẾP TỤC MUA HÀNG</Link>
+                    </div>
                 </div>
             </div>
         </div>

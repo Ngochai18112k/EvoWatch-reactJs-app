@@ -34,10 +34,6 @@ function ListProductNew(props) {
                     slidesPerView: 2,
                     spaceBetween: 0,
                 },
-                992: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                },
                 1024: {
                     slidesPerView: 4,
                     spaceBetween: 0,
