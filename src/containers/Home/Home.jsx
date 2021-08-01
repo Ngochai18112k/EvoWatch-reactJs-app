@@ -101,7 +101,7 @@ function Home(props) {
 
             {/* Btn */}
             <div className="button">
-                <Link to="/product" className="btns btn__darkwhite" title="Xem tất cả">XEM TẤT CẢ</Link>
+                <Link to="/news" className="btns btn__darkwhite" title="Xem tất cả">XEM TẤT CẢ</Link>
             </div>
         </div >
     );
